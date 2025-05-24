@@ -27,9 +27,11 @@ export const Navbar = () => {
     { id: "education", label: "Education" },
   ];
   return (
-    <nav className="bg-transparent ">
+    <nav className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${
+        isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"
+      }`}>
       <div className="text-white py-5 flex justify-between items-center">
-        <div className="cursor-pointer text-lg font-semibold">
+        <div className="cursor-pointer text-lg font-semibold ml-14">
           <span className="text-[#8245ec]">&lt;</span>
           <span className="text-[#ffffff]">Harsh</span>
           <span className="text-[#8245ec]">/</span>
@@ -125,4 +127,3 @@ export const Navbar = () => {
     </nav>
   );
 };
-47.00
