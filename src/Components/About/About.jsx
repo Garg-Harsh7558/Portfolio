@@ -10,7 +10,7 @@ export const About = () => {
         id="about"
         className="py-4 px-[7vw] lg:px-[20vw] mt-16 md:mt-24 lg:mt-32"
       >
-        <div className="flex">
+        <div className="md:flex">
           <div className="md:w-1/2">
             <h1 className="text-white lg:text-5xl md:text-3xl  font-bold my-1 lg:my-2">
               Hii,I am
@@ -45,13 +45,13 @@ export const About = () => {
               href="https://www.flipkart.com/?affid=affveve&affExtParam1=d51d956ad29db92b85d44cea2abab916&affExtParam2=60827"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#8245ec] rounded-full text-xl font-semibold p-1.5  hover:text-white transition  duration-[1500ms] hover:font-extrabold hover:shadow-[0_0_40px_#864ee7] "
+              className="bg-[#8245ec] rounded-full text-xl font-semibold p-1.5  hover:text-white transition justify-center flex my-9 duration-[1500ms] hover:font-extrabold hover:shadow-[0_0_40px_#864ee7] "
             >
               Download CV
             </a>
           </div>
-          <div className=""><Tilt className="sm:w-sm">
-            <img src={harsh} alt="Harsh Agrawal" className="rounded-full  lg:ml-10 drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)]"/>
+          <div className="md:w-1/2 "><Tilt className="sm:ml-8 md:ml-24 md:mt-24">
+            <img src={harsh} alt="Harsh Agrawal" className="rounded-full lg:ml-10 drop-shadow-[0_10px_20px_rgba(130,69,255,0.5)]"/>
             </Tilt>
           </div>
         </div>
