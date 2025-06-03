@@ -1,5 +1,6 @@
 import React from "react";
 import { SkillsInfo } from "../../constants.js";
+import Tilt from "react-parallax-tilt"
 
 export const Skills = () => {
   return (
@@ -14,13 +15,33 @@ export const Skills = () => {
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. In sit iure
         labore aspernatur sapiente ad.
       </p>
-{/* skills categories */}
+      {/* skills categories */}
       <div className="text-white flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
         {SkillsInfo.map((category) => (
-          <div key={category.title} className="bg-gray-900 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white 
-          shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]"><h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">{category.title}</h3></div>
+          <div
+          key={category.title}
+          className="bg-gray-900 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white 
+          shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]"
+          >
+            <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
+              {category.title}
+            </h3>
+
+            <Tilt>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
+              {category.skills.map((skill) => (
+                <div  key={skill.name}
+                        className="flex items-center justify-center space-x-2 bg-transparent border-2 rounded-full border-gray-700 px-5">
+                <img src={skill.logo} alt={`${skill.name} logo`}  className="w-6 h-6 sm:w-8 sm:h-8"/>
+                <span className="text-xs sm:text-sm text-gray-300 ml-[-4px]">{skill.name}</span>
+
+                </div>
+              ))}
+            </div>
+          </Tilt>
+          </div>
         ))}
-        
       </div>
     </section>
   );
