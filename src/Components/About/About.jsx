@@ -12,7 +12,7 @@ export const About = () => {
       >
         <div className="md:flex">
           <div className="md:w-1/2">
-            <h1 className="text-white lg:text-5xl md:text-3xl  font-bold my-1 lg:my-2">
+            <h1 className="text-orange-400 lg:text-5xl md:text-3xl  font-bold my-1 lg:my-2">
               Hii,I am
             </h1>
             <h1 className="text-white lg:text-5xl md:text-3xl  font-bold ">

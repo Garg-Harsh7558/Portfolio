@@ -7,9 +7,14 @@ export const Navbar = () => {
   const [activeSession, setActiveSession] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const handleMenuItemClick = (sectionId) => {
-    setActiveSession(sectionId);
-    setIsOpen(false);
-  };
+  setActiveSession(sectionId);
+  setIsOpen(false);
+
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,7 +99,7 @@ export const Navbar = () => {
                 <li
                   key={item.id}
                   className={`cursor-pointer hover:text-white ${
-                    activeSession === item.id ? "text-[#8245ec]" : ""
+                    activeSession === item.id ? "text-[#8245ec] " : " "
                   }`}
                 >
                   <button onClick={() => handleMenuItemClick(item.id)}>
