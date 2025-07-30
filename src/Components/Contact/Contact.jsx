@@ -1,6 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 export const Contact = () => {
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
@@ -9,7 +12,7 @@ export const Contact = () => {
     emailjs
       .sendForm(
         "service_dm6117f",
-        "template_lzb8i18",
+        "template_ug6mf0v",
         form.current,
         "ca3POcxUljrUXyAsk"
       )
@@ -46,6 +49,7 @@ export const Contact = () => {
       id="contact"
       className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3  bg-[linear-gradient(38.73deg,rgba(204,0,187,0.15)_0%,rgba(201,32,184,0)_50%),linear-gradient(141.27deg,rgba(0,70,209,0)_50%,rgba(0,70,209,0.15)_100%)]"
     >
+       <ToastContainer />
       {/* Section Title */}
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white">CONTACT</h2>
@@ -61,7 +65,7 @@ export const Contact = () => {
           <h3 className="text-white font-bold text-center text-xl py-3">
             Connect With Me
           </h3>
-          <form ref={form} onClick={sendEmail}>
+          <form ref={form} onSubmit={sendEmail}>
             <input
               type="email"
               name="user_email"
@@ -70,7 +74,7 @@ export const Contact = () => {
               required
             />
             <input
-              type="email"
+              type="text"
               name="user_name"
               placeholder="   Enter Your Name"
               required
@@ -84,8 +88,7 @@ export const Contact = () => {
               className="text-white border w-full p-2 mb-2 rounded-lg focus:outline-none focus:border-pink-800"
             />
             <textarea
-              type="email"
-              name="user_name"
+              name="message"
               rows={4}
               placeholder="   Enter Your Message"
               className="text-white border w-full p-2 mb-2 rounded-lg focus:outline-none focus:border-pink-800"
