@@ -13,8 +13,7 @@ export const Skills = () => {
         SKILLS
       </div>
       <p className="text-white text-sm text-center">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. In sit iure
-        labore aspernatur sapiente ad.
+       Proficient in full-stack web development with expertise in modern frameworks, programming languages, and development tools.
       </p>
       {/* skills categories */}
       <div className="text-white flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
