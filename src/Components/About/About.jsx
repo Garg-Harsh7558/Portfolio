@@ -42,7 +42,7 @@ export const About = () => {
               experience working with Next.js and MongoDB.
             </p>
             <a
-              href="https://drive.google.com/file/d/1TfmXatHyj3MS8r9yOKsvTvGzutxbDKhB/view?usp=sharing"
+              href="https://drive.google.com/file/d/1l4nYUOKZqXajl6wQgNlxefL1E5cFnEHp/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#8245ec] rounded-full text-xl font-semibold p-1.5  hover:text-white transition justify-center flex my-9 duration-[1500ms] hover:font-extrabold hover:shadow-[0_0_40px_#864ee7] "
