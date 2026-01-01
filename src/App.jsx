@@ -20,8 +20,8 @@ function App() {
          <div className='m-0 p-0'><Navbar /></div> 
         <About />
         <Skills />
-        <Experience />
-        <Work />
+        {/* <Experience /> */}
+        {/* <Work /> */}
         <Education />
         <Contact />
         <Footer />
