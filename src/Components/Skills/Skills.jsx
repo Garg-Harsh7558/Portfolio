@@ -8,11 +8,9 @@ export const Skills = () => {
       id="skills"
       className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans bg-[linear-gradient(38.73deg,rgba(204,0,187,0.15)_0%,rgba(201,32,184,0)_50%),linear-gradient(141.27deg,rgba(0,70,209,0)_50%,rgba(0,70,209,0.15)_100%)]"
     >
-      <div className="text-center md:text-4xl sm:text-2xl font-bold  text-white border-b-2 
-       border-[#8245ec] pb-2">
-        SKILLS
-      </div>
-      <p className="text-white text-sm text-center">
+      <div className="text-center md:text-4xl sm:text-2xl font-bold  text-white ">SKILLS</div>
+        <div className="w-24 h-1.5 bg-purple-500 rounded-2xl mx-auto my-4"></div>
+        <p className="text-white text-sm text-center">
        Proficient in full-stack web development with expertise in modern frameworks, programming languages, and development tools.
       </p>
       {/* skills categories */}

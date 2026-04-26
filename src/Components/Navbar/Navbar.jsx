@@ -16,21 +16,36 @@ export const Navbar = () => {
   }
 };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll",handleScroll);
-  }, []);
-
   const menuItems = [
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
-    { id: "work", label: "Work" },
+    // { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
     { id: "education", label: "Education" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+
+      // Update active session based on scroll position
+      const sections = menuItems.map(item => item.id);
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // If the top of the section is within the top 30% of the viewport
+          if (rect.top >= -100 && rect.top <= window.innerHeight * 0.3) {
+            setActiveSession(sectionId);
+            break;
+          }
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuItems]);
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${
         isScrolled ? "bg-[#050414]/90 bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"

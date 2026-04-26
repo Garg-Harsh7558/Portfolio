@@ -10,7 +10,7 @@ export const Education = () => {
       {/* Section Title */}
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
-        <div className="w-40 h-1 bg-purple-500 mx-auto mt-4"></div>
+        <div className="w-24 h-1.5 bg-purple-500 rounded-2xl mx-auto my-4"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
           My education has been a journey of learning and development. Here are
           the details of my academic background
@@ -20,7 +20,7 @@ export const Education = () => {
       {/* Education Timeline */}
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
+        <div className="absolute left-0 sm:left-1/2 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
 
         {/* Education Entries */}
         {education.map((edu, index) => (

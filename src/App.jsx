@@ -7,7 +7,7 @@ import { Experience } from './Components/Experience/Experience'
 import { Footer } from './Components/Footer/Footer'
 import { Navbar } from './Components/Navbar/Navbar'
 import { Skills } from './Components/Skills/Skills'
-import { Work } from './Components/Work/Work'
+import { Projects } from './Components/Work/Projects'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,7 +21,7 @@ function App() {
         <About />
         <Skills />
         {/* <Experience /> */}
-        {/* <Work /> */}
+        <Projects />
         <Education />
         <Contact />
         <Footer />

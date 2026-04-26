@@ -45,16 +45,9 @@ import bps from './assets/education_logo/bps.jpeg';
 
 
 // Project Section Logo's
-import githubdetLogo from './assets/work_logo/github_det.png';
-import csprepLogo from './assets/work_logo/cs_prep.png';
-import movierecLogo from './assets/work_logo/movie_rec.png';
-import taskremLogo from './assets/work_logo/task_rem.png';
-import npmLogo from './assets/work_logo/npm.png';
-import webverLogo from './assets/work_logo/web_dig.png';
-import cmLogo from './assets/work_logo/cm.png';
-import imagesearchLogo from './assets/work_logo/image_search.png';
-import removebgLogo from './assets/work_logo/remove_bg.png';
-
+import E_Cell from "./assets/work_logo/E_Cell.png"
+import AstroLogic from "./assets/work_logo/AstroLogic.png"
+import Portfolio from "./assets/work_logo/Portfolio.png"
 
 export const SkillsInfo = [
   {
@@ -65,13 +58,10 @@ export const SkillsInfo = [
       // { name: 'SASS', logo: sassLogo },
       { name: 'JavaScript', logo: javascriptLogo },
       { name: 'React JS', logo: reactjsLogo },
-      // { name: 'Angular', logo: angularLogo },
       // { name: 'Redux', logo: reduxLogo },
       { name: 'Next JS', logo: nextjsLogo },
       { name: 'Tailwind CSS', logo: tailwindcssLogo },
-      // { name: 'GSAP', logo: gsapLogo },
-      // { name: 'Material UI', logo: materialuiLogo },
-      // { name: 'Bootstrap', logo: bootstrapLogo },
+     
     ],
   },
   {
@@ -117,11 +107,11 @@ export const SkillsInfo = [
   export const experiences = [
     {
       id: 0,
-      img: webverseLogo,
-      role: "Fullstack Developer",
-      company: "Webverse Digital",
-      date: "April 2024 - Present",
-      desc: "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
+      img: "__",
+      role: "__",
+      company: "__",
+      date: "__",
+      desc: "__",
       skills: [
         "HTML",
         "CSS",
@@ -133,39 +123,6 @@ export const SkillsInfo = [
         "MongoDb",
         "Redux",
         " Next Js",
-      ],
-    },
-    {
-      id: 1,
-      img: agcLogo,
-      role: "Fullstack Engineer",
-      company: "Agumentik Group of Companies",
-      date: "July 2023 - March 2024",
-      desc: "Contributed to innovative projects as a Fullstack Engineer, leading both frontend and backend development using technologies such as HTML, CSS, JavaScript, PHP, SQL, Bootstrap, and ReactJS. Worked closely with the team to deliver responsive, high-performance web applications and improve user experience through seamless integration of various technologies.",
-      skills: [
-        "ReactJS",
-        "Redux",
-        "JavaScript",
-        "Tailwind CSS",
-        "HTML",
-        "CSS",
-        "SQL",
-      ],
-    },
-    {
-      id: 2,
-      img: newtonschoolLogo,
-      role: "Frontend Intern",
-      company: "Newton School",
-      date: "September 2021 - August 2022",
-      desc: "Worked as a Frontend Developer Intern, designing and implementing scalable UI components and responsive websites using HTML, CSS, JavaScript, Bootstrap, and Material UI. Collaborated with the design team to translate wireframes and prototypes from Figma into interactive, user-friendly web pages.",
-      skills: [
-        "HTML",
-        "CSS",
-        "Javascript",
-        "Bootstrap",
-        "Figma",
-        "Material UI",
       ],
     },
   ];
@@ -202,4 +159,32 @@ export const SkillsInfo = [
   ];
   
   export const projects = [
-  ]
+  {
+    id: 1,
+    title: "Astrologic",
+    description: "A modern astrology platform featuring real-time chart generation, AI-driven analysis, and personalized insights for users.",
+    image: AstroLogic,
+    tags: ["React", "Node.js","Express.js", "Tailwind CSS","MongoDB", "AI Analysis", "RESTful APIs","JWT", "Nodemailer"],
+    github: "https://github.com/Garg-Harsh7558/AstrologicFrontend",
+    webapp: "https://astrologic-frontend.vercel.app/"
+  },
+  {
+    id: 2,
+    title: "E-Cell Platform",
+    description: "A centralized portal for the Entrepreneurship Cell to manage events, student registrations, and startup resources, fostering a culture of innovation.",
+    image: E_Cell,
+    tags: ["React", "JavaScript", "Tailwind CSS"],
+    github: "https://github.com/Garg-Harsh7558/E-Cell",
+    webapp: "https://e-cell-fu6v4veta-harsh-agrawals-projects-c802d9de.vercel.app/"
+  },
+  {
+    id: 3,
+    title: "Personal Portfolio",
+    description: "A clean and responsive personal portfolio website built with React and Tailwind CSS, showcasing skills and projects with a modern aesthetic.",
+    image: Portfolio,
+    tags: ["React", "JavaScript", "EmailJS", "Tailwind CSS", "Vite"],
+    github: "https://github.com/Garg-Harsh7558/Portfolio",
+    webapp: "https://portfolio-omega-ten-qkic0lbfm5.vercel.app/"
+  },
+
+];

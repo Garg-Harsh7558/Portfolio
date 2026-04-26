@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Mail, Send, User, MessageSquare, MapPin, Phone } from "lucide-react";
 
 export const Contact = () => {
   const form = useRef();
-  const [isSent, setIsSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSending(true);
+
     emailjs
       .sendForm(
         "service_dm6117f",
@@ -18,87 +21,117 @@ export const Contact = () => {
       )
       .then(
         () => {
-          setIsSent(true);
+          setIsSending(false);
           form.current.reset();
           toast.success("Message sent successfully! ✅", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
+            position: "bottom-right",
             theme: "dark",
           });
         },
         (error) => {
+          setIsSending(false);
           console.error("Error sending message:", error);
           toast.error("Failed to send message. Please try again.", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
+            position: "bottom-right",
             theme: "dark",
           });
         }
       );
   };
-  return (
-    <section
-      id="contact"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3  bg-[linear-gradient(38.73deg,rgba(204,0,187,0.15)_0%,rgba(201,32,184,0)_50%),linear-gradient(141.27deg,rgba(0,70,209,0)_50%,rgba(0,70,209,0.15)_100%)]"
-    >
-       <ToastContainer />
-      {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">CONTACT</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          I’d love to hear from you
-        </p>
-      </div>
 
-      {/* contact form */}
-      <div className="items-center flex justify-center">
-        <div className="border-white w-full border-2 rounded-lg bg-[#0d081f]  p-6  max-w-md">
-          <h3 className="text-white font-bold text-center text-xl py-3">
-            Connect With Me
-          </h3>
-          <form ref={form} onSubmit={sendEmail}>
-            <input
-              type="email"
-              name="user_email"
-              placeholder="   Enter Your Email"
-              className="text-white border w-full p-2 my-2 rounded-lg focus:border-pink-800 focus:outline-none "
-              required
-            />
-            <input
-              type="text"
-              name="user_name"
-              placeholder="   Enter Your Name"
-              required
-              className="text-white border w-full p-2 mb-2 rounded-lg focus:outline-none focus:border-pink-800"
-            />
-            <input
-              type="text"
-              name="subject"
-              placeholder="   Subject"
-              required
-              className="text-white border w-full p-2 mb-2 rounded-lg focus:outline-none focus:border-pink-800"
-            />
-            <textarea
-              name="message"
-              rows={4}
-              placeholder="   Enter Your Message"
-              className="text-white border w-full p-2 mb-2 rounded-lg focus:outline-none focus:border-pink-800"
-            />
-            <button className="text-white font-bold text-center w-full py-2 rounded bg-gradient-to-r  from-purple-700 to-red-700 hover:bg-gradient-to-r hover:from-red-700 hover:to-purple-700">
-              Send
-            </button>
-          </form>
+  return (
+    <section id="contact" className="py-24 relative overflow-hidden bg-[#050414]">
+      <ToastContainer />
+      
+      <div className="container mx-auto px-6 lg:px-24 relative z-10">
+        <div className="max-w-xl mx-auto">
+          {/* Form Side */}
+          < div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl">
+              <h2 className="text-3xl font-bold text-white mb-8 text-center">
+                Send a <span className="text-[#8245ec]">Message</span>
+              </h2>
+              
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-400 ml-1">Name</label>
+                  <div className="relative">
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+                    <input
+                      type="text"
+                      name="user_name"
+                      placeholder="John Doe"
+                      required
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-[#8245ec] transition-all placeholder:text-gray-600"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-400 ml-1">Email</label>
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+                    <input
+                      type="email"
+                      name="user_email"
+                      placeholder="john@example.com"
+                      required
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-[#8245ec] transition-all placeholder:text-gray-600"
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-400 ml-1" >Subject</label>
+                  <div className="relative">
+                    <MessageSquare className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+                    <input
+                      type="text"
+                      name="subject"
+                      placeholder="Project Inquiry"
+                      required
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-[#8245ec] transition-all placeholder:text-gray-600"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-gray-400 ml-1">Message</label>
+                  <textarea
+                    name="message"
+                    rows={5}
+                    placeholder="Message"
+                    required
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-[#8245ec] transition-all placeholder:text-gray-600 resize-none"
+                  />
+                </div>
+
+                < button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  disabled={isSending}
+                  type="submit"
+                  className="w-full bg-[#8245ec] hover:bg-[#7034d9] text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-3 transition-all shadow-lg shadow-purple-500/25 disabled:opacity-50 group"
+                >
+                  {isSending ? (
+                    <div className="w-6 h-6 border-3 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  ) : (
+                    <>
+                      <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      <span>Send Message</span>
+                    </>
+                  )}
+                </ button>
+              </form>
+            </div>
+          </ div>
         </div>
       </div>
     </section>
   );
 };
+
