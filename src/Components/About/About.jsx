@@ -34,20 +34,25 @@ const Typewriter = ({ texts, speed = 100, eraseSpeed = 50, pause = 2000 }) => {
     return () => clearTimeout(timeout);
   }, [displayText, isTyping, currentIndex, texts, speed, eraseSpeed, pause]);
 
-  return <span>{displayText}<span className="animate-ping font-light ml-0.5">|</span></span>;
+  return (
+    <span>
+      {displayText}
+      <span className="animate-ping font-light ml-0.5">|</span>
+    </span>
+  );
 };
 
 export const About = () => {
   return (
     <div className="relative overflow-hidden">
       {/* Background Blobs */}
-      <BlurBlob 
-        position={{ top: "20%", left: "10%" }} 
-        size={{ width: "400px", height: "400px" }} 
+      <BlurBlob
+        position={{ top: "20%", left: "10%" }}
+        size={{ width: "400px", height: "400px" }}
       />
-      <BlurBlob 
-        position={{ top: "60%", left: "80%" }} 
-        size={{ width: "500px", height: "500px" }} 
+      <BlurBlob
+        position={{ top: "60%", left: "80%" }}
+        size={{ width: "500px", height: "500px" }}
       />
 
       <section
@@ -65,8 +70,8 @@ export const About = () => {
             <div className="flex md:text-3xl font-bold text-white my-1 lg:my-2">
               <h2 className="">I am a</h2>
               <h2 className="text-fuchsia-600 ml-2">
-                <Typewriter 
-                  texts={["Developer", "Designer", "Problem Solver"]} 
+                <Typewriter
+                  texts={["Developer", "Designer", "Problem Solver"]}
                 />
               </h2>
             </div>
@@ -76,23 +81,29 @@ export const About = () => {
               experience in modern web technologies. I have a strong foundation
               in React.js, HTML, CSS, and JavaScript, complemented by practical
               experience working with Node.js ,Express.js and MongoDB.I am also
-              familiar with AI tools and am always looking to expand my knowledge.
+              familiar with AI tools and am always looking to expand my
+              knowledge.
             </p>
             <a
-              href="https://drive.google.com/file/d/1f8kGAsDYp8-scJpW_soKfoLHFtoo_xKj/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1NALlE0TlUAm-Hp_LAf6M1owa8jwZP1KP/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group hover:animate-pulse relative inline-flex items-center justify-center px-8 py-3.5 font-bold text-white transition-all duration-300 bg-[#8245ec] font-pj rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-[#7034d9] shadow-[0_0_20px_rgba(130,69,236,0.3)] hover:shadow-[0_0_40px_rgba(130,69,236,0.5)] my-9 w-fit"
             >
               <span className="flex items-center gap-2">
                 Download CV
-                <svg 
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
                 </svg>
               </span>
             </a>
@@ -111,5 +122,3 @@ export const About = () => {
     </div>
   );
 };
-
-
