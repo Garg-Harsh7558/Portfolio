@@ -85,7 +85,7 @@ export const About = () => {
               knowledge.
             </p>
             <a
-              href="https://drive.google.com/file/d/1NALlE0TlUAm-Hp_LAf6M1owa8jwZP1KP/view?usp=sharing"
+              href="https://drive.google.com/file/d/1ZrASHjUemPpg3lKu2wcWzo5Ywf5l5CPR/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group hover:animate-pulse relative inline-flex items-center justify-center px-8 py-3.5 font-bold text-white transition-all duration-300 bg-[#8245ec] font-pj rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-[#7034d9] shadow-[0_0_20px_rgba(130,69,236,0.3)] hover:shadow-[0_0_40px_rgba(130,69,236,0.5)] my-9 w-fit"
